@@ -1,16 +1,16 @@
-
 {
+  "version": 2,
   "builds": [
     {
+      "src": "index.py",
       "use": "@vercel/python",
-      "entrypoint": "flask run",
-      "env": {
-        "FLASK_APP": "index.py",
-        "FLASK_ENV": "production"
+      "config": {
+        "maxLambdaSize": "15mb"
       }
     }
   ],
   "routes": [
+    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.py" }
   ]
 }
