@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <meta charset="utf-8">
+        <title>Générer Fichier XLSX</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+      </head>
+     
+    <body>
+        <h1>PROJET GOAL</h1>
+        <h2>Cette interface permet de faire une première transformation des élements de réponses de txt en fichier xlsx</h2>
+        <form id="file-form" action="/process_file" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="file">Selectionner un fichier:</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <div>
+                <button type="submit">Générer</button>
+            </div>
+        </form>
+    </body>
+</html>
