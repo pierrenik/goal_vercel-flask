@@ -1,5 +1,16 @@
+
 {
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/index" }
-    ]
+  "builds": [
+    {
+      "use": "@vercel/python",
+      "entrypoint": "flask run",
+      "env": {
+        "FLASK_APP": "index.py",
+        "FLASK_ENV": "production"
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.py" }
+  ]
 }
